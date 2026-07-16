@@ -146,19 +146,20 @@ Source of truth: `agents/PORT_REGISTRY.md` (reconciled against live `lsof`, most
 ---
 
 ## Chain of Command
+All 11 agents report directly to Bryan for now (flattened 2026-07-15 — Merlin's Chief of Staff role is coordination, not a reporting layer).
 ```
 Bryan (CEO)
-└── Merlin-H (Chief of Staff — Hermes fleet)
-    ├── Ava-H (ILM website & comms)
-    │   └── Cache-H (ILM marketing)
-    ├── Chip-H (ScanLedger, BizLedger)
-    ├── Rex-H (SureFile)
-    ├── Penny-H (PayoffPlanner, BudgetCoach)
-    ├── Finn-H (Siftcut)
-    ├── Viddie-H (AI media)
-    ├── Pulse-H (research)
-    ├── Goob-H (OpenClaw + TandemIQ, MindQueue)
-    └── Atlas-H (NoteQueue, InboxPilot)
+├── Merlin-H (Chief of Staff — Hermes fleet coordination, not a reporting layer)
+├── Ava-H (ILM website & comms)
+├── Cache-H (ILM marketing)
+├── Chip-H (ScanLedger, BizLedger)
+├── Rex-H (SureFile)
+├── Penny-H (PayoffPlanner, BudgetCoach)
+├── Finn-H (Siftcut)
+├── Viddie-H (AI media)
+├── Pulse-H (research)
+├── Atlas-H (SignalStack Suite: TandemIQ, MindQueue, NoteQueue, InboxPilot)
+└── Goob-H (Personal Assistant — workouts & scheduling; PantryMaid)
 ```
 
 ---
