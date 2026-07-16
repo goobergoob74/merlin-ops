@@ -49,33 +49,31 @@ All agents below run on this Mac mini via Hermes gateways.
 | Finn-H | @FinnH74bot | Siftcut Dev | Siftcut.ai (full ownership) |
 | Viddie-H | @ViddieH74bot | AI Media Specialist | AI photo/video generation, fal.ai integration |
 | Pulse-H | @PulseH74bot | Research | Daily briefings for all active projects |
-| Goob-H | @GoobH74bot | OpenClaw Manager + Dev | OpenClaw machine, TandemIQ, MindQueue |
-| Atlas-H | @AtlasH_BPL_bot | SignalStack Dev | NoteQueue, InboxPilot |
+| Goob-H | @GoobH74bot | Personal Assistant + PantryMaid Dev | Workouts/scheduling for Bryan, PantryMaid |
+| Atlas-H | @AtlasH74bot | SignalStack Suite Dev | TandemIQ, MindQueue, NoteQueue, InboxPilot |
 
 ---
 
 ## Active Projects
 
 ### BrightPathLabs — LedgerlyPro Suite
-**Suite:** Financial management platform
-**Codebase:** /Users/Merlin/app_creation/agents/ledgerlypro_fresh/suite_app
+**Suite:** Financial management platform — **live** at ledgerlypro.ai
+**Codebase:** /Users/Merlin/app_creation/products/ledgerlypro/apps/ — payoffplanner (port 3005) is the shared backend + embedded pages actually serving ledgerlypro.ai (ScanLedger/BizLedger/BudgetCoach/PayoffPlanner all live there); scanledger and bizledger also have separate standalone codebases serving their own domains with separate databases, currently behind the embedded versions; hub is scaffolded but not deployed
 **Apps:** ScanLedger.ai (Chip) · BizLedger.ai (Chip) · PayoffPlanner.io (Penny) · BudgetCoach.io (Penny) · SureFile.io (Rex)
-**Hub:** LedgerlyPro Hub (port 3005)
-**Status:** Pre-launch, active development
-**PRD:** /Users/Merlin/app_creation/agents/prds/ledgerlypro_suite_prd.md
+**Status:** Live, active development
+**PRD:** /Users/Merlin/app_creation/products/ledgerlypro/apps/hub/docs/ledgerlypro-master-prd.md (+ ledgerlypro-per-app-prds.md) — the old agents/prds/ledgerlypro_suite_prd.md is superseded, kept for history only
 
 ### BrightPathLabs — SignalStack Suite
 **Suite:** Productivity platform for independent professionals
-**Codebase:** /Users/Merlin/app_creation/agents/signalstack
-**Apps:** TandemIQ (Goob) · MindQueue (Goob) · NoteQueue (Atlas) · InboxPilot (Atlas)
-**Hub:** SignalStack Hub (port 3006)
-**Status:** Pre-launch, active development
+**Codebase:** /Users/Merlin/app_creation/products/signalstack/app (single shared server/client app, port 3010)
+**Apps:** TandemIQ · MindQueue · NoteQueue · InboxPilot (all Atlas — full suite consolidated 2026-07-15)
+**Status:** Pre-launch, active development. Target domain: signalstack.studio (tunnel pending Cloudflare zone access)
 **PRD:** /Users/Merlin/app_creation/agents/prds/MASTER-PRD-v3.9.md
 
 ### Siftcut.ai
 **Type:** Standalone AI video editing assistant
 **Owner:** Finn (full)
-**Codebase:** /Users/Merlin/app_creation/agents/siftcut/desktop
+**Codebase:** /Users/Merlin/app_creation/products/siftcut
 **Port:** 3001
 **Status:** Active development
 **PRD:** /Users/Merlin/app_creation/agents/prds/siftcut_prd.md
@@ -92,13 +90,19 @@ All agents below run on this Mac mini via Hermes gateways.
 **Type:** Company website / consulting landing page
 **Status:** Active
 
+### PantryMaid
+**Type:** Pantry/grocery management app
+**Owner:** Goob (full)
+**Codebase:** /Users/Merlin/app_creation/products/pantrymaid — apps/api (port 3009), apps/web (port 5173)
+**Status:** Active, tunneled to pantrymaid.brightpathlabs.ai
+
 ---
 
 ## Hermes Fleet Management
 
 Merlin owns all of the following on this machine:
 
-**Profiles:** ~/.hermes/profiles/{ava,cache,chip,finn,goob,merlin,penny,pulse,rex,viddie}/
+**Profiles:** ~/.hermes/profiles/{atlas,ava,cache,chip,finn,goob,merlin,penny,pulse,rex,viddie}/
 **Plists:** ~/Library/LaunchAgents/ai.hermes.gateway.{agent}.plist
 **Logs:** ~/.hermes/logs/gateway.{agent}.log
 **Cron jobs:** Managed via Hermes gateway cron (merlin profile owns backup crons)
@@ -122,19 +126,22 @@ tail -20 ~/.hermes/profiles/{agent}/logs/gateway.log
 ---
 
 ## Port Registry
+Source of truth: `agents/PORT_REGISTRY.md` (reconciled against live `lsof`, most recently 2026-07-15). This table is a quick-reference copy — check the full registry if something looks off.
+
 | Port | App | Agent |
 |------|-----|-------|
 | 3001 | Siftcut | Finn |
-| 3002 | ILM backend | Ava |
+| 3002 | ILM website backend (assigned; real backend runs on 8400) | Ava |
 | 3003 | ScanLedger | Chip |
 | 3004 | BizLedger | Chip |
-| 3005 | LedgerlyPro Hub | Goob |
-| 3006 | SignalStack Hub | Goob/Ava |
-| 3007 | SureFile | Rex |
-| 3008 | PayoffPlanner | Penny |
-| 3009 | BudgetCoach | Penny |
-| 4000 | BPL Dashboard | Goob |
-| 4001 | BPL Dashboard API | Goob |
+| 3005 | PayoffPlanner (serves ledgerlypro.ai) | Penny |
+| 3006 | BudgetCoach | Penny |
+| 3009 | PantryMaid API | Goob |
+| 3010 | SignalStack suite | Atlas |
+| 3011 | SureFile (local only, no tunnel yet) | Rex |
+| 5173 | PantryMaid web | Goob |
+| 4002 | Mission Control | Merlin |
+| 8400 | ILM Booking API | Ava |
 
 ---
 
