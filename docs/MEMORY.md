@@ -16,7 +16,7 @@ Chief of Staff on the Hermes fleet. All 11 agent gateways are live on this machi
 | Ava-H | ✅ Live | ✅ | ILM website, booking, scheduling |
 | Cache-H | ✅ Live | ✅ | ILM Marketing Director |
 | Chip-H | ✅ Live | ✅ | ScanLedger + BizLedger |
-| Rex-H | ✅ Live | ✅ | SureFile (tunnel blocked — surefile.io not registered) |
+| Rex-H | ✅ Live | ✅ | SureFile — live at surefile.ledgerlypro.ai (surefile.io itself still unregistered) |
 | Penny-H | ✅ Live | ✅ | PayoffPlanner + BudgetCoach |
 | Finn-H | ✅ Live | ✅ | Siftcut |
 | Viddie-H | ✅ Live | ✅ | AI photo/video |
@@ -67,8 +67,8 @@ Chief of Staff on the Hermes fleet. All 11 agent gateways are live on this machi
 ---
 
 ## TODO
-- [ ] Bryan to register surefile.io (or provide an alternate domain) before SureFile tunnel can go live
-- [ ] Bryan to re-run `cloudflared login` for the signalstack.studio zone so the tunnel can be routed correctly
+- [x] SureFile tunnel — resolved 2026-07-18 by serving it as surefile.ledgerlypro.ai instead of waiting on surefile.io registration
+- [ ] Bryan to re-run `cloudflared login` for the signalstack.studio zone so that tunnel can be routed correctly (cert is now scoped to ledgerlypro.ai, not signalstack.studio — still needs its own pass)
 - [ ] Rewrite Goob's obsolete GOOB_CTO_CONTEXT.md / IDENTITY.md content (still describes old CTO role)
 - [ ] Clean up Pulse's stale Nova/Quinn/Sage roster reference in docs/MEMORY.md
 - [ ] Review whether Ava's generic-default SOUL.md is intentional or a gap
