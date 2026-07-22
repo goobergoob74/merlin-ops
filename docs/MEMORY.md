@@ -69,7 +69,7 @@ Chief of Staff on the Hermes fleet. All 11 agent gateways are live on this machi
 ## TODO
 - [x] SureFile tunnel — resolved 2026-07-18 by serving it as surefile.ledgerlypro.ai instead of waiting on surefile.io registration
 - [ ] Bryan to re-run `cloudflared login` for the signalstack.studio zone so that tunnel can be routed correctly (cert is now scoped to ledgerlypro.ai, not signalstack.studio — still needs its own pass)
-- [ ] Rewrite Goob's obsolete GOOB_CTO_CONTEXT.md / IDENTITY.md content (still describes old CTO role)
-- [ ] Clean up Pulse's stale Nova/Quinn/Sage roster reference in docs/MEMORY.md
+- [ ] Rewrite Goob's obsolete GOOB_CTO_CONTEXT.md / IDENTITY.md content (still describes old CTO role) — note: `goob/docs/MEMORY.md` itself was corrected 2026-07-22 with a CURRENT STATE section; GOOB_CTO_CONTEXT.md and IDENTITY.md are still untouched
+- [x] Clean up Pulse's stale Nova/Quinn/Sage roster reference in docs/MEMORY.md — resolved 2026-07-21 (Pulse's own commit `c1e10aa`, "Fix stale agent roster: retired Nova/Quinn/Sage, outdated Goob/Cache roles")
 - [ ] Review whether Ava's generic-default SOUL.md is intentional or a gap
-- [ ] Reconcile Siftcut version/remote split between `products/siftcut` (deployed) and Finn's workspace copy
+- [ ] Reconcile Siftcut version/remote split between `products/siftcut` (deployed) and Finn's workspace copy — clarified 2026-07-22: `products/siftcut` is the stale/orphaned one (package.json 0.21.0, no recent commits); the real deployed copy is `agents/finn/siftcut/working/repo` (0.22.0, live at siftcut.ai via `com.finn.siftcut.server`). Still needs an actual reconciliation/cleanup pass, not just identification.
