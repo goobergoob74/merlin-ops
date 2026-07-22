@@ -64,6 +64,9 @@ Chief of Staff on the Hermes fleet. All 11 agent gateways are live on this machi
 - bpl_status repo divergence resolved (clean merge)
 - Fleet-wide doc sweep: stale `/Users/goob/` paths, "Goob (CTO)" titles, and nested chain-of-command diagrams corrected across agent docs
 
+## Mission Control ownership (confirmed 2026-07-22)
+`AGENT_ROSTER.md` lists Mission Control (`mission.brightpathlabs.ai`) under Merlin. Pulse's own memory carried an older 2026-04-30 note transferring dashboard ownership to Pulse, with no record anywhere of a later re-transfer — flagged as an undocumented gap by the 2026-07-22 fleet memory audit. **Confirmed directly with Bryan on 2026-07-22: Merlin is the correct, intended owner going forward.** No further reconciliation needed; this note exists so the "how did this happen" question doesn't resurface unanswered.
+
 ---
 
 ## TODO
